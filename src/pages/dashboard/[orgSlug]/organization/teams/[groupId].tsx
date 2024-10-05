@@ -366,7 +366,7 @@ export default function GroupPage() {
           <p className="text-sm text-gray-500">
             Use this slug when assigning permissions to teams{' '}
             <a
-              href="https://interval.com/docs/writing-actions/authentication"
+              href="https://utilhq.com/docs/writing-actions/authentication"
               className="font-medium text-primary-500 hover:opacity-70"
             >
               via code

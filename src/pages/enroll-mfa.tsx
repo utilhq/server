@@ -52,7 +52,7 @@ function EnrollMFAContent({ onSubmit }: { onSubmit: () => void }) {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <Helmet>
-        <title>Set up multi-factor authentication | Interval</title>
+        <title>Set up multi-factor authentication | utilhq</title>
       </Helmet>
       <div className="w-full max-w-md p-8 mx-auto text-sm">
         <div className="mb-6">
@@ -74,7 +74,7 @@ function EnrollMFAContent({ onSubmit }: { onSubmit: () => void }) {
           )}{' '}
           <a
             className="font-medium text-primary-500 hover:opacity-60"
-            href="https://interval.com/docs/writing-actions/authentication#multi-factor-authentication"
+            href="https://utilhq.com/docs/writing-actions/authentication#multi-factor-authentication"
           >
             multi-factor authentication
           </a>{' '}

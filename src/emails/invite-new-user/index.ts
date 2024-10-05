@@ -8,5 +8,5 @@ export type InviteNewUserTemplateProps = {
 
 export default emailSender<InviteNewUserTemplateProps>(
   'invite-new-user',
-  props => `${props.organizationName} has invited you to join them on Interval`
+  props => `${props.organizationName} has invited you to join them on utilhq`
 )

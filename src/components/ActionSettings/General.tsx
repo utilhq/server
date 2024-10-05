@@ -206,7 +206,7 @@ export default function ActionGeneralSettings({
         <p className="py-3 mb-4 text-md">
           Actions are configured in code. See{' '}
           <a
-            href="https://interval.com/docs/writing-actions/#defining-actions"
+            href="https://utilhq.com/docs/writing-actions/#defining-actions"
             className="font-medium text-primary-500 hover:opacity-60"
             target="_blank"
           >

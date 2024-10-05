@@ -295,7 +295,7 @@ test.describe('io.display.table', () => {
 
     await expect(page.locator('text=External item 0')).toHaveAttribute(
       'href',
-      'https://interval.com'
+      'https://utilhq.com'
     )
 
     await page.locator('text=Action item 0').click()

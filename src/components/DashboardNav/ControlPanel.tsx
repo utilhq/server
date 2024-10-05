@@ -111,14 +111,14 @@ function Footer() {
   return (
     <>
       <a
-        href="https://interval.com/docs"
+        href="https://utilhq.com/docs"
         className="group block bg-gray-50 p-4 text-gray-500"
       >
         <strong className="text-gray-900 font-medium group-hover:text-opacity-70">
           Documentation
         </strong>
         <br />
-        Visit the Interval docs &rsaquo;
+        Visit the utilhq docs &rsaquo;
       </a>
     </>
   )

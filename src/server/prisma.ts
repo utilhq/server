@@ -22,7 +22,7 @@ try {
   const dbUrlString: string = prisma._engine.config.overrideDatasources.db.url
   const dbUrl = new URL(dbUrlString)
   logger.info(`[Prisma] Connecting to database as user: ${dbUrl.username}`)
-  if (dbUrl.host.includes('interval2-prod-do-user-860008')) {
+  if (dbUrl.host.includes('utilhq2-prod-do-user-860008')) {
     logger.info(`[Prisma] 🚨 Connecting to prod DB 🚨`)
   }
 } catch (e) {

@@ -1,4 +1,4 @@
-import { io, Page, Layout } from '@interval/sdk'
+import { io, Page, Layout } from '@utilhq/sdk'
 import dedent from 'ts-dedent'
 import { pendingIOCalls, transactionLoadingStates } from '~/wss/processVars'
 

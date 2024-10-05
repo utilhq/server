@@ -51,14 +51,14 @@ function NewTransactionError({ error }: { error: QueryError }) {
         <p>
           Sorry, we were unable to start this action. Please confirm that the{' '}
           <a
-            href="https://interval.com/docs/deployments/"
+            href="https://utilhq.com/docs/deployments/"
             target="_blank"
             className="inline-flex items-center text-primary-500 hover:opacity-60 font-medium"
           >
             action deployment
             <IconExternalLink className="w-4 h-4 relative -top-px opacity-50 ml-1" />
           </a>{' '}
-          is online and connected to Interval. Please let us know if you
+          is online and connected to utilhq. Please let us know if you
           continue to experience issues.
         </p>
       ) : notFound ? (

@@ -34,5 +34,5 @@ export const InlineWithHelpText = Template.bind({})
 InlineWithHelpText.args = {
   ...Inline.args,
   helpText:
-    'All of their data will be deleted **immediately** and cannot be recovered.\n\n- Account will be deleted\n- All of their data will be deleted\n- This cannot be undone\n\nSee here for more info: https://interval.com/docs',
+    'All of their data will be deleted **immediately** and cannot be recovered.\n\n- Account will be deleted\n- All of their data will be deleted\n- This cannot be undone\n\nSee here for more info: https://utilhq.com/docs',
 }

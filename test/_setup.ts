@@ -19,12 +19,12 @@ export const config = {
   url: env.APP_URL,
   orgSlug: 'test-runner',
   login: {
-    email: 'test-runner@interval.com',
+    email: 'test-runner@utilhq.com',
     password: 'password',
     sessionPath: 'test/.session.json',
   },
   supportLogin: {
-    email: 'test-runner-support-group@interval.com',
+    email: 'test-runner-support-group@utilhq.com',
     password: 'password',
     sessionPath: 'test/.session-support.json',
   },

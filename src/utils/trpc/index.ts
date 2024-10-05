@@ -21,9 +21,9 @@ export const clientConfig = {
   headers() {
     return {
       // This is the ID for the current organization, set by DashboardContext
-      'x-interval-organization-id': window.__INTERVAL_ORGANIZATION_ID,
-      'x-interval-organization-environment-id':
-        window.__INTERVAL_ORGANIZATION_ENVIRONMENT_ID,
+      'x-utilhq-organization-id': window.__UTILHQ_ORGANIZATION_ID,
+      'x-utilhq-organization-environment-id':
+        window.__UTILHQ_ORGANIZATION_ENVIRONMENT_ID,
     }
   },
 }

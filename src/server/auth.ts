@@ -143,7 +143,7 @@ export async function enrollMfa(user: Pick<User, 'mfaId' | 'email'>) {
 
   return workos.mfa.enrollFactor({
     type: 'totp',
-    issuer: 'Interval',
+    issuer: 'utilhq',
     user: user.email,
   })
 }

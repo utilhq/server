@@ -30,7 +30,7 @@ export default function Notifications(props: {
               <a
                 target="_blank"
                 className="underline decoration-slate-300 underline-offset-2 hover:text-gray-800"
-                href="https://interval.com/docs/action-context/notify"
+                href="https://utilhq.com/docs/action-context/notify"
                 rel="noreferrer"
               >
                 Use <code>io.notify()</code> in your action to send

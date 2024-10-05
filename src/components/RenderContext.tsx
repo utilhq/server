@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import { SerializableRecord } from '@interval/sdk/dist/ioSchema'
+import { SerializableRecord } from '@utilhq/sdk/dist/ioSchema'
 
 export type RenderContextProps = {
   getActionUrl: (props: {

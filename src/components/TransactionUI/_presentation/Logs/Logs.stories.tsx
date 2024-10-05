@@ -15,7 +15,7 @@ Default.args = {
     'Deleted 1 subscription',
     'Deleted 27 post drafts',
     'Skipped 13 published posts',
-    '> View published posts here: https://interval.com/blog/author/storybook (text after link) <p>',
+    '> View published posts here: https://utilhq.com/blog/author/storybook (text after link) <p>',
     'Deleted 13 comments',
   ],
   isCompleted: true,

@@ -17,7 +17,7 @@ export default function AuthLoadingState({
     <div className="flex items-center justify-center min-h-screen-ios">
       {pageTitle && (
         <Helmet>
-          <title>{pageTitle} | Interval</title>
+          <title>{pageTitle} | utilhq</title>
         </Helmet>
       )}
 

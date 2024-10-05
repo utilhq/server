@@ -53,7 +53,7 @@ Default.args = {
     {
       label: 'Long URL',
       value:
-        'https://interval.com/dashboard/interval/actions/classes/view/' +
+        'https://utilhq.com/dashboard/utilhq/actions/classes/view/' +
         faker.random.alpha(60),
     },
   ],
@@ -85,7 +85,7 @@ CardLayout.args = {
     },
     {
       label: 'URL',
-      value: 'https://interval.com/dashboard/interval/actions/classes/view',
+      value: 'https://utilhq.com/dashboard/utilhq/actions/classes/view',
     },
   ],
 }

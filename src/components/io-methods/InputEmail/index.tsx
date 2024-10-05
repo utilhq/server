@@ -37,7 +37,7 @@ export default function InputEmail(props: RCTResponderProps<'INPUT_EMAIL'>) {
         autoComplete="off"
         aria-autocomplete="none"
         // _search prevents browsers from suggesting contact info, 1Password widget, etc.
-        // given the nature of Interval, we think users are unlikely to want to auto-fill personal logins.
+        // given the nature of utilhq, we think users are unlikely to want to auto-fill personal logins.
         name={`${props.id}_search`}
         type="email"
         inputMode="email"

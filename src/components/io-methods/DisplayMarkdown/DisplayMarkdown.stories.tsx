@@ -41,7 +41,7 @@ Multiline.args = {
     2. Ordered
     3. \`inline_code\`
 
-    [Link](https://interval.com)
+    [Link](https://utilhq.com)
 
     ~~~
     Here's an untagged code block

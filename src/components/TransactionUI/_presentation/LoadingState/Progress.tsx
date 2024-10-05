@@ -1,4 +1,4 @@
-import { BackwardCompatibleLoadingState } from '@interval/sdk/dist/internalRpcSchema'
+import { BackwardCompatibleLoadingState } from '@utilhq/sdk/dist/internalRpcSchema'
 
 export function getPercentComplete({
   itemsCompleted,

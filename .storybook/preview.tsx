@@ -47,8 +47,8 @@ export const decorators = [
                   {
                     organization: {
                       id: '0',
-                      name: 'Interval',
-                      slug: 'interval',
+                      name: 'utilhq',
+                      slug: 'utilhq',
                       ownerId: '0',
                       createdAt: new Date(),
                       updatedAt: new Date(),

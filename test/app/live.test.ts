@@ -1,12 +1,12 @@
 import { expect } from '@playwright/test'
-import Interval, { IntervalActionHandler } from '@interval/sdk/dist'
+import UtilHQ, { UtilHQActionHandler } from '@utilhq/sdk/dist'
 import { prisma, config, dashboardUrl, isAppendUIEnabled } from '../_setup'
 import { test } from '../_fixtures'
 
 test.skip(!!process.env.SDK_VERSION && process.env.SDK_VERSION !== 'main')
 test.skip(!!process.env.GHOST_MODE)
 
-const handler: IntervalActionHandler = async io => {
+const handler: UtilHQActionHandler = async io => {
   const first = await io.input.text('First input')
   const second = await io.input.text('Second input')
 
@@ -14,10 +14,10 @@ const handler: IntervalActionHandler = async io => {
 }
 
 test.describe('Live actions', () => {
-  let interval: Interval | undefined
+  let utilhq: UtilHQ | undefined
 
   test.beforeAll(async () => {
-    interval = new Interval({
+    utilhq = new UtilHQ({
       apiKey: config.liveApiKey,
       logLevel: 'debug',
       endpoint: `${config.url.replace('http', 'ws')}/websocket`,
@@ -30,7 +30,7 @@ test.describe('Live actions', () => {
       },
     })
 
-    interval.listen()
+    utilhq.listen()
 
     const user = await prisma.user.findUnique({
       where: {

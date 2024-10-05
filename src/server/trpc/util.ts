@@ -78,11 +78,11 @@ export async function createContext(
     }
 
     if (
-      req.headers['x-interval-organization-id'] &&
+      req.headers['x-utilhq-organization-id'] &&
       // For some reason undefined headers are being stringified instead of discarded during serialization
-      req.headers['x-interval-organization-id'] !== 'undefined'
+      req.headers['x-utilhq-organization-id'] !== 'undefined'
     ) {
-      organizationId = String(req.headers['x-interval-organization-id'])
+      organizationId = String(req.headers['x-utilhq-organization-id'])
 
       req.session.currentOrganizationId = organizationId
       sessionUpdated = true
@@ -116,11 +116,11 @@ export async function createContext(
     }
 
     if (
-      req.headers['x-interval-organization-environment-id'] &&
-      req.headers['x-interval-organization-environment-id'] !== 'undefined'
+      req.headers['x-utilhq-organization-environment-id'] &&
+      req.headers['x-utilhq-organization-environment-id'] !== 'undefined'
     ) {
       organizationEnvironmentId =
-        req.headers['x-interval-organization-environment-id']?.toString()
+        req.headers['x-utilhq-organization-environment-id']?.toString()
       req.session.currentOrganizaitonEnvironmentId = organizationEnvironmentId
       sessionUpdated = true
     } else {

@@ -42,7 +42,7 @@ function Notice() {
       <NoticeView
         body={
           <>
-            Sign up or login to customize your Interval URL and disable public
+            Sign up or login to customize your utilhq URL and disable public
             access.
           </>
         }
@@ -58,7 +58,7 @@ function Notice() {
     <NoticeView
       body={
         <>
-          Start your Interval app with an API key from the dashboard to disable
+          Start your utilhq app with an API key from the dashboard to disable
           public access.
         </>
       }

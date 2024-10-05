@@ -4,7 +4,7 @@ import { ParsedImport, RecordValue } from '../'
 import IVCheckbox from '~/components/IVCheckbox'
 import IVButton from '~/components/IVButton'
 import { RCTResponderProps } from '~/components/RenderIOCall'
-import { extractColumns } from '@interval/sdk/dist/utils/spreadsheet'
+import { extractColumns } from '@utilhq/sdk/dist/utils/spreadsheet'
 import { castValue } from '../helpers'
 import IconRightArrow from '~/icons/compiled/RightArrow'
 

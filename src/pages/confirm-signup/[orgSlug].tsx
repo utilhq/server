@@ -27,20 +27,20 @@ export default function ConfirmSignupPage() {
 
   if (orgCheck.error) {
     return (
-      <AuthLoadingState pageTitle="Account setup | Interval">
+      <AuthLoadingState pageTitle="Account setup | utilhq">
         <IVAPIError error={orgCheck.error} />
       </AuthLoadingState>
     )
   }
 
   if (orgCheck.isLoading || !orgCheck.data) {
-    return <AuthLoadingState pageTitle="Account setup | Interval" />
+    return <AuthLoadingState pageTitle="Account setup | utilhq" />
   }
 
   return (
     <div className="flex items-center justify-center min-h-screen-ios">
       <Helmet>
-        <title>Account setup | Interval</title>
+        <title>Account setup | utilhq</title>
       </Helmet>
       <div className="w-full max-w-lg p-8 mx-auto">
         <div className="mb-6">
@@ -180,10 +180,10 @@ export default function ConfirmSignupPage() {
                             Sorry, we were unable to finish setting up your
                             account. Please reach out to{' '}
                             <a
-                              href="mailto:help@interval.com"
+                              href="mailto:help@utilhq.com"
                               className="font-medium hover:opacity-70"
                             >
-                              help@interval.com
+                              help@utilhq.com
                             </a>
                             .
                           </>

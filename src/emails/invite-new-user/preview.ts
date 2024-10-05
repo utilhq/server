@@ -1,11 +1,11 @@
 import sendTemplate from '.'
 
 export default sendTemplate(
-  'accounts@interval.com',
+  'accounts@utilhq.com',
   {
-    organizationName: 'Interval',
+    organizationName: 'utilhq',
     signupUrl: 'http://localhost:3000/accept-invitation?token=abcd',
-    preheader: "You've been invited to join Foo Corp on Interval.",
+    preheader: "You've been invited to join Foo Corp on utilhq.",
   },
   { preview: true }
 )

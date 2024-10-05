@@ -23,7 +23,7 @@
       "server/*": ["./src/server"]
     }
   },
-  "include": ["interval.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx"],
+  "include": ["utilhq.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx"],
   "exclude": ["node_modules"],
   "ts-node": {
     "compilerOptions": {

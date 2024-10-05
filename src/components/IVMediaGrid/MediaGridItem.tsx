@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { GridItem, SerializableRecord } from '@interval/sdk/dist/ioSchema'
+import { GridItem, SerializableRecord } from '@utilhq/sdk/dist/ioSchema'
 import DropdownMenu from '../DropdownMenu'
 import useImageLoaded from '~/utils/useImageLoaded'
 import MoreIcon from '~/icons/compiled/More'

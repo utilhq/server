@@ -160,7 +160,7 @@ function AddHostDialog({
                 <Field
                   id="url"
                   name="url"
-                  placeholder="https://example.com/interval"
+                  placeholder="https://example.com/utilhq"
                   autoFocus
                   required
                   className="form-input"

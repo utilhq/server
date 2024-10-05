@@ -1,4 +1,4 @@
-import { ImageSize } from '@interval/sdk/dist/ioSchema'
+import { ImageSize } from '@utilhq/sdk/dist/ioSchema'
 
 // Keep in sync with tailwind.config.js
 export function imageSizeToPx(

@@ -1,4 +1,4 @@
-import { ParsedActionResultSchema } from '@interval/sdk/dist/ioSchema'
+import { ParsedActionResultSchema } from '@utilhq/sdk/dist/ioSchema'
 
 /**
  * Parses the JSON result of a transaction into a more structured format.

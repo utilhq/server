@@ -2,7 +2,7 @@ import { z } from 'zod'
 import {
   internalTableColumn,
   internalTableRow,
-} from '@interval/sdk/dist/ioSchema'
+} from '@utilhq/sdk/dist/ioSchema'
 import { useMemo } from 'react'
 import { IVTableCells, IVTableCellValueObject, IVTableRow } from './useTable'
 import stringify from '~/utils/stringify'

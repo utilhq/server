@@ -3,7 +3,7 @@ import {
   AccessControlDefinition,
   ActionDefinition,
   PageDefinition,
-} from '@interval/sdk/dist/internalRpcSchema'
+} from '@utilhq/sdk/dist/internalRpcSchema'
 import {
   Action,
   ActionGroup,
@@ -353,7 +353,7 @@ export async function getPermissionsWarning({
     return [
       `One or more invalid team slugs were found in your config:`,
       slugs.join('\n'),
-      `Use teams' slugs when granting access to actions and pages.\nLearn more: https://interval.com/docs/writing-actions/authentication#defining-permissions-in-code\n`,
+      `Use teams' slugs when granting access to actions and pages.\nLearn more: https://utilhq.com/docs/writing-actions/authentication#defining-permissions-in-code\n`,
     ].join('\n\n')
   }
 

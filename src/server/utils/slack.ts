@@ -111,7 +111,7 @@ export async function slackAPICall(
   if (response['error']) {
     if (response['error'] === 'account_inactive') {
       throw new SlackAPIError(
-        `The Interval app has been uninstalled from your Slack workspace. You'll need to reconnect to send Slack notifications.`
+        `The utilhq app has been uninstalled from your Slack workspace. You'll need to reconnect to send Slack notifications.`
       )
     } else {
       throw new SlackAPIError(

@@ -359,25 +359,25 @@ export function DashboardProvider({ children }) {
 
   useEffect(() => {
     if (organization.data?.id) {
-      window.__INTERVAL_ORGANIZATION_ID = organization.data.id
+      window.__UTILHQ_ORGANIZATION_ID = organization.data.id
       invalidateQueries(['auth.session.user'])
     }
 
     return () => {
-      window.__INTERVAL_ORGANIZATION_ID = undefined
+      window.__UTILHQ_ORGANIZATION_ID = undefined
       invalidateQueries(['auth.session.user'])
     }
   }, [organization.data, invalidateQueries])
 
   useEffect(() => {
     if (organizationEnvironment.data?.id) {
-      window.__INTERVAL_ORGANIZATION_ENVIRONMENT_ID =
+      window.__UTILHQ_ORGANIZATION_ENVIRONMENT_ID =
         organizationEnvironment.data.id
       invalidateQueries(['auth.session.user'])
     }
 
     return () => {
-      window.__INTERVAL_ORGANIZATION_ENVIRONMENT_ID = undefined
+      window.__UTILHQ_ORGANIZATION_ENVIRONMENT_ID = undefined
       invalidateQueries(['auth.session.user'])
     }
   }, [organizationEnvironment.data, invalidateQueries])
@@ -436,7 +436,7 @@ export function DashboardProvider({ children }) {
   if (!defaultSlug) {
     // Shouldn't be possible, malformed user organization access
     return (
-      <ErrorMessage message="You do not have access to any organizations. Please contact help@interval.com." />
+      <ErrorMessage message="You do not have access to any organizations. Please contact help@utilhq.com." />
     )
   }
 
@@ -558,7 +558,7 @@ export function DashboardProvider({ children }) {
             },
           ]}
           options={{
-            // kbar adds overflow:hidden to the body when open, but in the Interval
+            // kbar adds overflow:hidden to the body when open, but in the utilhq
             // dashboard the main scrolling element is a div, not the body, so we
             // don't need to set any margins on the body when the kbar is open.
             disableScrollbarManagement: true,

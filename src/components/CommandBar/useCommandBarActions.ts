@@ -186,7 +186,7 @@ export default function useCommandBarActions() {
         id: 'settings',
         name: 'Settings',
         shortcut: ['g', 's'],
-        section: 'Interval',
+        section: 'utilhq',
       },
       {
         id: 'account-settings',
@@ -232,9 +232,9 @@ export default function useCommandBarActions() {
         id: 'docs',
         name: 'Documentation',
         perform: () => {
-          window.open('https://interval.com/docs', '_blank')
+          window.open('https://utilhq.com/docs', '_blank')
         },
-        section: 'Interval',
+        section: 'utilhq',
       },
     ],
     [

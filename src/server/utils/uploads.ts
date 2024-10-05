@@ -29,7 +29,7 @@ export const S3_UPLOADS_ENABLED = isS3Available(env)
 function getS3Client() {
   if (!isS3Available(env)) {
     throw new Error(
-      'Please provide S3 credentials to enable file uploads. Visit the docs for more info: https://interval.com/docs'
+      'Please provide S3 credentials to enable file uploads. Visit the docs for more info: https://utilhq.com/docs'
     )
   }
 

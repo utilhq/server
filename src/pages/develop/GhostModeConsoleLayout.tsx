@@ -10,11 +10,11 @@ function OrgIdSetter() {
   const orgId = org.id
   useEffect(() => {
     if (orgId) {
-      window.__INTERVAL_ORGANIZATION_ID = orgId
+      window.__UTILHQ_ORGANIZATION_ID = orgId
     }
 
     return () => {
-      window.__INTERVAL_ORGANIZATION_ID = undefined
+      window.__UTILHQ_ORGANIZATION_ID = undefined
     }
   }, [orgId])
 

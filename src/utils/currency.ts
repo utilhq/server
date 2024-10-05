@@ -1,4 +1,4 @@
-import { CURRENCIES, CurrencyCode } from '@interval/sdk/dist/ioSchema'
+import { CURRENCIES, CurrencyCode } from '@utilhq/sdk/dist/ioSchema'
 
 export { CURRENCIES }
 export type { CurrencyCode }

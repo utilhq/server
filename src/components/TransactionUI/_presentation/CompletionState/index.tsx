@@ -79,7 +79,7 @@ export default function CompletionState({
             >
               our collection of example tools
             </a>{' '}
-            to learn more about what you can build with Interval.
+            to learn more about what you can build with utilhq.
           </p>
         </div>
       )}

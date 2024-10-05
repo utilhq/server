@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react'
-import { ioSchema } from '@interval/sdk/dist/ioSchema'
+import { ioSchema } from '@utilhq/sdk/dist/ioSchema'
 import { z } from 'zod'
 import IVDateTimePicker from '~/components/IVDateTimePicker'
 import { dateTimeFormatter } from '~/utils/formatters'

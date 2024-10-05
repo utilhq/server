@@ -1,14 +1,14 @@
 import { useCallback, useRef, useState, useEffect } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import { z } from 'zod'
-import { T_IO_RESPONSE } from '@interval/sdk/dist/ioSchema'
+import { T_IO_RESPONSE } from '@utilhq/sdk/dist/ioSchema'
 import {
   ClientSchema,
   WSServerSchema,
   BackwardCompatibleLoadingState,
-} from '@interval/sdk/dist/internalRpcSchema'
-import { LayoutSchema, LAYOUT_SCHEMA } from '@interval/sdk/dist/classes/Layout'
-import { DuplexRPCHandlers } from '@interval/sdk/dist/classes/DuplexRPCClient'
+} from '@utilhq/sdk/dist/internalRpcSchema'
+import { LayoutSchema, LAYOUT_SCHEMA } from '@utilhq/sdk/dist/classes/Layout'
+import { DuplexRPCHandlers } from '@utilhq/sdk/dist/classes/DuplexRPCClient'
 import superjson from '~/utils/superjson'
 import { ActionMode } from '~/utils/types'
 import useWebSocketClient from '../TransactionUI/useWebSocketClient'

@@ -98,7 +98,7 @@ function GroupAccessForm({
                                 have{' '}
                                 <a
                                   className="text-primary-500 font-medium hover:opacity-60"
-                                  href="https://interval.com/docs/writing-actions/authentication#roles"
+                                  href="https://utilhq.com/docs/writing-actions/authentication#roles"
                                   target="_blank"
                                 >
                                   a role with sufficient access
@@ -125,7 +125,7 @@ function GroupAccessForm({
                                   also have{' '}
                                   <a
                                     className="text-primary-500 font-medium hover:opacity-60"
-                                    href="https://interval.com/docs/writing-actions/authentication#roles"
+                                    href="https://utilhq.com/docs/writing-actions/authentication#roles"
                                     target="_blank"
                                   >
                                     a role with sufficient access
@@ -136,7 +136,7 @@ function GroupAccessForm({
                                     team must also have the{' '}
                                     <a
                                       className="text-primary-500 font-medium hover:opacity-60"
-                                      href="https://interval.com/docs/writing-actions/authentication#roles"
+                                      href="https://utilhq.com/docs/writing-actions/authentication#roles"
                                       target="_blank"
                                     >
                                       Admin role
@@ -230,7 +230,7 @@ export default function ActionPermissionsSettings({
             Starting with version <code>{SDK_PERMISSIONS_MIN_VERSION}</code> of
             the SDK, permissions must be configured via code.{' '}
             <a
-              href="https://interval.com/docs/writing-actions/authentication#defining-permissions-in-code"
+              href="https://utilhq.com/docs/writing-actions/authentication#defining-permissions-in-code"
               className="text-primary-500 font-medium hover:opacity-60"
             >
               View documentation &rsaquo;

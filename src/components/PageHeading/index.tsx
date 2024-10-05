@@ -30,7 +30,7 @@ export default function PageHeading({
   return (
     <div className="md:flex md:items-start md:justify-between mb-4">
       <Helmet>
-        <title>{textTitle} | Interval</title>
+        <title>{textTitle} | utilhq</title>
       </Helmet>
       <div className="flex-1 min-w-0">
         {breadcrumbs && breadcrumbs.length > 0 && (

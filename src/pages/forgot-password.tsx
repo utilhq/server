@@ -11,7 +11,7 @@ export default function ForgotPasswordPage() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <Helmet>
-        <title>Forgot password | Interval</title>
+        <title>Forgot password | utilhq</title>
       </Helmet>
       <div className="w-full max-w-sm p-8 mx-auto max">
         <h2 className="my-6 text-3xl font-extrabold text-center text-gray-900">

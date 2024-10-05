@@ -20,8 +20,8 @@ import {
   T_IO_RESPONSE_KIND,
   T_IO_RETURNS,
   T_IO_STATE,
-} from '@interval/sdk/dist/ioSchema'
-import { ButtonConfig, ChoiceButtonConfig } from '@interval/sdk/dist/types'
+} from '@utilhq/sdk/dist/ioSchema'
+import { ButtonConfig, ChoiceButtonConfig } from '@utilhq/sdk/dist/types'
 import { ZodError } from 'zod'
 
 /**

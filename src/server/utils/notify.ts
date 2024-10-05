@@ -22,7 +22,7 @@ import {
   OrganizationWithPrivate,
   TransactionWithPossibleMetadata,
 } from '~/utils/types'
-import type { NotificationDeliveryInstruction } from '@interval/sdk/dist/types'
+import type { NotificationDeliveryInstruction } from '@utilhq/sdk/dist/types'
 import { logger } from '~/server/utils/logger'
 import { makeApiCall } from './wss'
 
@@ -228,7 +228,7 @@ async function notificationWork({
         if (err instanceof FailedNotificationError) {
           if (
             err.message ===
-            `The Interval app has been uninstalled from your Slack workspace. You'll need to reconnect to send Slack notifications.`
+            `The utilhq app has been uninstalled from your Slack workspace. You'll need to reconnect to send Slack notifications.`
           ) {
             await prisma.organization.update({
               where: {
@@ -362,7 +362,7 @@ async function sendNotification({
     case 'SLACK':
       if (!organization.private?.slackAccessToken) {
         throw new FailedNotificationError(
-          `You can't send Slack notifications until you've authorized the Interval app`
+          `You can't send Slack notifications until you've authorized the utilhq app`
         )
       }
 
@@ -427,7 +427,7 @@ async function populateMethod(
       }
 
       if (!recipient) {
-        // TODO support sending emails to non-Interval users, maybe requiring an
+        // TODO support sending emails to non-utilhq users, maybe requiring an
         // explicit allowlist
         throw new FailedNotificationError(
           `Can't send email notifications to users outside of your organization: ${instruction.to}`
@@ -492,7 +492,7 @@ async function sendSlackNotification({
 
     if (!channel.is_member) {
       throw new FailedNotificationError(
-        `The Interval app is not installed in this Slack channel: ${destination}`
+        `The utilhq app is not installed in this Slack channel: ${destination}`
       )
     }
 
@@ -563,8 +563,8 @@ async function sendSlackNotification({
       : ''
 
   const preamble = transactionNotification
-    ? `Your *${metadata.actionName}* action on Interval triggered a notification.`
-    : `A notification has been triggered via Interval.`
+    ? `Your *${metadata.actionName}* action on utilhq triggered a notification.`
+    : `A notification has been triggered via utilhq.`
   const messageText = title ? `>*${title}*\n>${message}` : `>${message}`
   // TODO add optional link to NotifyConfig
   const notificationLink = transactionNotification

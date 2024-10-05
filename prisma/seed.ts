@@ -12,7 +12,7 @@ import {
 const prisma = new PrismaClient()
 
 const ADMIN_USER_ID = 'Z-bMgZZ1IY1NkgwYzE1n6'
-const ADMIN_USER_EMAIL = 'admin@interval.com'
+const ADMIN_USER_EMAIL = 'admin@utilhq.com'
 const ADMIN_USER_PASSWORD = 'password'
 
 function upsertUser(details: Prisma.UserCreateInput) {
@@ -155,7 +155,7 @@ const API_KEYS = {
     dev: 'admin_dev_kcLjzxNFxmGLf0aKtLVhuckt6sziQJtxFOdtM19tBrMUp5mj',
     live: 'live_N47qd1BrOMApNPmVd0BiDZQRLkocfdJKzvt8W6JT5ICemrAN',
   },
-  interval: {
+  utilhq: {
     dev: 'admin_dev_lASZF4q7JKGjNNEc2aKNDMSXTDZ4liOa9CCSeBTteZyo458A',
     live: 'live_32c17AqIKOdH0X0hGmR7Vnd9CYNDQLG585504uIm0AUaAgUf',
   },
@@ -260,7 +260,7 @@ async function createDevOrg() {
     ...otherUsers.map(([firstName, lastName]) =>
       upsertUser({
         password: encryptPassword('password'),
-        email: `${firstName.toLowerCase()}@interval.com`,
+        email: `${firstName.toLowerCase()}@utilhq.com`,
         firstName,
         lastName,
       })
@@ -268,14 +268,14 @@ async function createDevOrg() {
     // ACTION_RUNNER-level user in the Support group
     upsertUser({
       password: encryptPassword('password'),
-      email: 'support@interval.com',
+      email: 'support@utilhq.com',
       firstName: 'Support',
       lastName: 'User',
     }),
     // DEVELOPER-level user in the Engineers group
     upsertUser({
       password: encryptPassword('password'),
-      email: 'engineers@interval.com',
+      email: 'engineers@utilhq.com',
       firstName: 'Engineers',
       lastName: 'User',
     }),
@@ -347,14 +347,14 @@ async function createDevOrg() {
 }
 
 /**
- * Creates an internal "Interval" organization containing actions for
- * managing the Interval instance.
+ * Creates an internal "utilhq" organization containing actions for
+ * managing the utilhq instance.
  */
-async function createIntervalOrg() {
-  console.log('Creating internal Interval org...')
+async function createUtilHQOrg() {
+  console.log('Creating internal utilhq org...')
 
-  const interval = await upsertOrg({
-    name: 'Interval',
+  const utilhq = await upsertOrg({
+    name: 'utilhq',
     owner: {
       connect: {
         id: ADMIN_USER_ID,
@@ -362,7 +362,7 @@ async function createIntervalOrg() {
     },
     private: { create: {} },
     id: 'URobaKdFwHieImSKFO37D',
-    slug: 'interval',
+    slug: 'utilhq',
     environments: {
       create: [
         { slug: PRODUCTION_ORG_ENV_SLUG, name: PRODUCTION_ORG_ENV_NAME },
@@ -377,7 +377,7 @@ async function createIntervalOrg() {
 
   await upsertApiKey({
     id: 'J91ACL455qSsHtp6x-QJB',
-    key: API_KEYS.interval.dev,
+    key: API_KEYS.utilhq.dev,
     user: {
       connect: {
         id: ADMIN_USER_ID,
@@ -386,12 +386,12 @@ async function createIntervalOrg() {
     usageEnvironment: 'DEVELOPMENT',
     organization: {
       connect: {
-        id: interval.id,
+        id: utilhq.id,
       },
     },
     organizationEnvironment: {
       connect: {
-        id: interval.environments.find(
+        id: utilhq.environments.find(
           env => env.slug === DEVELOPMENT_ORG_ENV_SLUG
         )?.id,
       },
@@ -400,7 +400,7 @@ async function createIntervalOrg() {
 
   await upsertApiKey({
     id: 'qhykubq7PUAGHnVv-xDh6',
-    key: encryptPassword(API_KEYS.interval.live),
+    key: encryptPassword(API_KEYS.utilhq.live),
     user: {
       connect: {
         id: ADMIN_USER_ID,
@@ -409,12 +409,12 @@ async function createIntervalOrg() {
     usageEnvironment: 'PRODUCTION',
     organization: {
       connect: {
-        id: interval.id,
+        id: utilhq.id,
       },
     },
     organizationEnvironment: {
       connect: {
-        id: interval.environments.find(
+        id: utilhq.environments.find(
           env => env.slug === PRODUCTION_ORG_ENV_SLUG
         )?.id,
       },
@@ -423,14 +423,14 @@ async function createIntervalOrg() {
 
   await createUserOrgAccess({
     user: { connect: { id: ADMIN_USER_ID } },
-    organization: { connect: { id: interval.id } },
+    organization: { connect: { id: utilhq.id } },
     permissions: ['ADMIN'],
   })
 }
 
 async function main() {
   await createDevOrg()
-  await createIntervalOrg()
+  await createUtilHQOrg()
 }
 
 main()

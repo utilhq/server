@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test'
-import Interval from '@interval/sdk/dist'
+import UtilHQ from '@utilhq/sdk/dist'
 import { prisma, config, dashboardUrl } from '../_setup'
 import { test } from '../_fixtures'
 import { encryptPassword } from '~/server/auth'
@@ -10,7 +10,7 @@ test.skip(!!process.env.GHOST_MODE)
 const STAGING_ENV_KEY = 'live_asdlfkajsdflkajsdflkasjdflaksdf'
 
 test.describe('Organization environment', () => {
-  let interval: Interval | undefined
+  let utilhq: UtilHQ | undefined
 
   test.beforeAll(async () => {
     const user = await prisma.user.findUnique({
@@ -67,7 +67,7 @@ test.describe('Organization environment', () => {
       })
     }
 
-    interval = new Interval({
+    utilhq = new UtilHQ({
       apiKey: STAGING_ENV_KEY,
       logLevel: 'debug',
       endpoint: `${config.url.replace('http', 'ws')}/websocket`,
@@ -78,7 +78,7 @@ test.describe('Organization environment', () => {
       },
     })
 
-    interval.listen()
+    utilhq.listen()
   })
 
   test("Doesn't show in production environment", async ({ page }) => {

@@ -17,7 +17,7 @@ Default.args = {
     number: 15,
     nullValue: null,
     nested: {
-      name: 'Interval',
+      name: 'utilhq',
     },
     longList: Array(100)
       .fill(0)

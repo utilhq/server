@@ -19,7 +19,7 @@ export const mockUser: Omit<User, 'password' | 'idpId'> = {
   firstName: 'John',
   isGhostMode: false,
   lastName: 'Doe',
-  email: 'john.doe@interval.com',
+  email: 'john.doe@utilhq.com',
   mfaId: null,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -30,9 +30,9 @@ export const mockUser: Omit<User, 'password' | 'idpId'> = {
 
 export const mockOrganization: Organization = {
   id: '1',
-  name: 'Interval',
+  name: 'utilhq',
   isGhostMode: false,
-  slug: 'interval',
+  slug: 'utilhq',
   createdAt: new Date(),
   updatedAt: new Date(),
   deletedAt: null,

@@ -21,5 +21,5 @@ export type NotificationTemplateProps = {
 
 export default emailSender<NotificationTemplateProps>(
   'notification',
-  props => `Interval notification: ${props.title || '' + props.message}`
+  props => `utilhq notification: ${props.title || '' + props.message}`
 )

@@ -21,7 +21,7 @@ Default.args = {
     // bigint: BigInt(123),
     null: null,
     undefined: undefined,
-    link: 'https://interval.com/' + faker.random.alpha(60),
+    link: 'https://utilhq.com/' + faker.random.alpha(60),
     veryLongString: faker.random.alpha(120),
     paragraphs: faker.lorem.paragraphs(3, '\n\n'),
   },

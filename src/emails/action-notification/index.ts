@@ -19,5 +19,5 @@ export type ActionNotificationTemplateProps = {
 export default emailSender<ActionNotificationTemplateProps>(
   'action-notification',
   props =>
-    `Interval notification: ${props.title || '' + props.metadata.actionName}`
+    `utilhq notification: ${props.title || '' + props.metadata.actionName}`
 )

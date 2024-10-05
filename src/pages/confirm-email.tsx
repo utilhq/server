@@ -13,7 +13,7 @@ function Container(props) {
   return (
     <div className="flex items-center justify-center min-h-screen-ios">
       <Helmet>
-        <title>Confirm email | Interval</title>
+        <title>Confirm email | utilhq</title>
       </Helmet>
       {props.children}
       <NotificationCenter />
@@ -42,20 +42,20 @@ export default function ConfirmEmailPage() {
     }
 
     return (
-      <AuthLoadingState pageTitle="Confirm email | Interval">
+      <AuthLoadingState pageTitle="Confirm email | utilhq">
         <IVAPIError error={confirmQuery.error} />
       </AuthLoadingState>
     )
   }
 
   if (!confirmQuery.data) {
-    return <AuthLoadingState pageTitle="Confirm email | Interval" />
+    return <AuthLoadingState pageTitle="Confirm email | utilhq" />
   }
 
   if (seal && confirmQuery.isSuccess) {
     // imporatant! perform a full reload to refresh the user object in MeContext.
     window.location.assign(`/dashboard/develop/actions?nc-email-confirmed`)
-    return <AuthLoadingState pageTitle="Confirm email | Interval" />
+    return <AuthLoadingState pageTitle="Confirm email | utilhq" />
   }
 
   if (confirmQuery.data.isConfirmRequired === false) {

@@ -132,7 +132,7 @@ export default function ActionNotificationsSettings({
               id="inputRequired"
               label="When input is required:"
               className="max-w-xs"
-              constraints="Interval sends automatic notifications to the person running the action when input is required for the action to continue running and when the action completes."
+              constraints="utilhq sends automatic notifications to the person running the action when input is required for the action to continue running and when the action completes."
             >
               <div className="py-2 text-gray-500">Notify the action runner</div>
             </IVInputField>
@@ -192,7 +192,7 @@ export default function ActionNotificationsSettings({
                       <IVInputField
                         id="slackChannel"
                         errorMessage={errors.slackChannel}
-                        helpText="You'll have to add the Interval app to Slack channels to enable receiving notifications and for them to appear here."
+                        helpText="You'll have to add the utilhq app to Slack channels to enable receiving notifications and for them to appear here."
                       >
                         <div className="max-w-xs">
                           <IVSelect

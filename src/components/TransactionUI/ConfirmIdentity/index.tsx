@@ -65,7 +65,7 @@ function ConfirmMFA({ onRespond, transactionId, context }) {
         <Form>
           <div className="mb-6 space-y-4">
             <p>
-              Your Interval account is enrolled in multi-factor authentication.
+              Your utilhq account is enrolled in multi-factor authentication.
               Enter a verification code from your authenticator app to continue.
             </p>
             <MFAInput label="Verification code" isLoading={verify.isLoading} />
@@ -144,7 +144,7 @@ function ConfirmPassword({
       {({ isValid }) => (
         <Form>
           <div className="mb-6 space-y-4">
-            <p>Enter your Interval password to continue.</p>
+            <p>Enter your utilhq password to continue.</p>
             <IVInputField id="email" label="Email address">
               <Field
                 id="email"

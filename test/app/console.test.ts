@@ -7,13 +7,13 @@ test.describe.parallel('Console tests', () => {
     await transactions.run('io.input.text')
 
     await page.click('text=First name')
-    await page.fill('input[type="text"]', 'Interval')
+    await page.fill('input[type="text"]', 'utilhq')
     await transactions.continue()
     await transactions.expectSuccess()
     await page.click('text=New transaction')
 
     await page.click('text=First name')
-    await page.fill('input[type="text"]', 'Interval')
+    await page.fill('input[type="text"]', 'utilhq')
     await transactions.continue()
     await transactions.expectSuccess()
   })

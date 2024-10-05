@@ -67,7 +67,7 @@ export default function TransactionsList(props: TransactionsListProps) {
           <div className="text-left max-w-lg space-y-2">
             <p>
               <Link
-                to="https://interval.com/docs/concepts/transactions"
+                to="https://utilhq.com/docs/concepts/transactions"
                 className="text-primary-500 font-medium hover:opacity-60"
               >
                 Transactions
@@ -90,7 +90,7 @@ export default function TransactionsList(props: TransactionsListProps) {
               </Link>{' '}
               and{' '}
               <Link
-                to="https://interval.com/docs/deployments"
+                to="https://utilhq.com/docs/deployments"
                 className="text-primary-500 font-medium hover:opacity-60"
               >
                 deploy

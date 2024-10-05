@@ -51,7 +51,7 @@ function DashboardEmptyState() {
       children={
         <div className="text-left max-w-lg space-y-2">
           <p>
-            Actions are the internal tools you build with Interval, created from
+            Actions are the internal tools you build with utilhq, created from
             within your project's codebase.
           </p>
           {canAccessDev && (
@@ -71,7 +71,7 @@ function DashboardEmptyState() {
               </Link>{' '}
               and{' '}
               <Link
-                to="https://interval.com/docs/deployments"
+                to="https://utilhq.com/docs/deployments"
                 className="text-primary-500 font-medium hover:opacity-60"
               >
                 deploy

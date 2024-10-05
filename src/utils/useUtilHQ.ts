@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react'
 
 type CallbackFn = () => void
 
-export default function useInterval(callback: CallbackFn, delay: number) {
+export default function useUtilHQ(callback: CallbackFn, delay: number) {
   const savedCallback = useRef<CallbackFn>()
 
   useEffect(() => {

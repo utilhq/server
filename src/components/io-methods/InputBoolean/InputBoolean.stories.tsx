@@ -23,7 +23,7 @@ Default.args = {
 export const WithHelpText = Template.bind({})
 WithHelpText.args = {
   label: 'Send confirmation email',
-  helpText: 'Will be delivered to alex@interval.com',
+  helpText: 'Will be delivered to ye@utilhq.com',
   onUpdatePendingReturnValue: () => {
     /**/
   },

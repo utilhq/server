@@ -39,7 +39,7 @@ function CompletionMessage() {
       be able to run the actions you're developing. Installation instructions
       and code samples will remain available{' '}
       <a
-        href="https://interval.com/docs/installation"
+        href="https://utilhq.com/docs/installation"
         className="text-primary-500 font-medium hover:opacity-60"
         target="_blank"
       >
@@ -70,21 +70,21 @@ function InstallToExisting({ language }: { language: string }) {
   let actionFileName: string | undefined = undefined
   switch (language) {
     case 'typescript':
-      mainFileName = 'src/interval.ts'
+      mainFileName = 'src/utilhq.ts'
       actionFileName = 'src/routes/hello_world.ts'
       mainCode = dedent(`
         import path from "path";
-        import { Interval } from "@interval/sdk";
+        import { UtilHQ } from "@utilhq/sdk";
 
-        const interval = new Interval({
+        const utilhq = new UtilHQ({
           apiKey: "${key?.data?.key || ''}",
           routesDirectory: path.resolve(__dirname, "routes"),
         });
 
-        interval.listen();
+        utilhq.listen();
       `)
       actionCode = dedent(`
-        import { Action, io } from "@interval/sdk";
+        import { Action, io } from "@utilhq/sdk";
 
         export default new Action(async () => {
           const name = await io.input.text("Your name");
@@ -93,21 +93,21 @@ function InstallToExisting({ language }: { language: string }) {
       `)
       break
     case 'javascript':
-      mainFileName = 'src/interval.js'
+      mainFileName = 'src/utilhq.js'
       actionFileName = 'src/routes/hello_world.js'
       mainCode = dedent(`
         const path = require("path");
-        const { Interval } = require("@interval/sdk");
+        const { UtilHQ } = require("@utilhq/sdk");
 
-        const interval = new Interval({
+        const utilhq = new UtilHQ({
           apiKey: "${key?.data?.key || ''}",
           routesDirectory: path.resolve(__dirname, "routes"),
         });
 
-        interval.listen();
+        utilhq.listen();
       `)
       actionCode = dedent(`
-        const { Action, io } = require("@interval/sdk");
+        const { Action, io } = require("@utilhq/sdk");
 
         module.exports = new Action(async () => {
           const name = await io.input.text("Your name");
@@ -118,18 +118,18 @@ function InstallToExisting({ language }: { language: string }) {
     case 'python':
       mainCode = dedent(`
         import os
-        from interval_sdk import Interval, IO
+        from utilhq_sdk import UtilHQ, IO
 
-        interval = Interval(
+        utilhq = UtilHQ(
             "${key?.data?.key || ''}",
         )
 
-        @interval.action
+        @utilhq.action
         async def hello_world(io: IO):
             name = await io.input.text("Your name")
             return f"Hello {name}"
 
-        interval.listen()
+        utilhq.listen()
       `)
       break
   }
@@ -149,7 +149,7 @@ function InstallToExisting({ language }: { language: string }) {
               }
               className="text-primary-500 font-medium hover:opacity-60 cursor-pointer"
             >
-              create a new Interval project from a template
+              create a new utilhq project from a template
             </a>
             .
           </p>
@@ -158,8 +158,8 @@ function InstallToExisting({ language }: { language: string }) {
               {...codeBlockProps}
               code={
                 language === 'python'
-                  ? `pip install interval-sdk`
-                  : `npm install @interval/sdk`
+                  ? `pip install utilhq-sdk`
+                  : `npm install @utilhq/sdk`
               }
               language="bash"
               canDownload={false}
@@ -240,7 +240,7 @@ function InstallToNew({
   const languageArg = `--language=${language}`
   const templateArg = `--template=${selectedTemplate}`
 
-  const command = ['npx create-interval-app', templateArg, languageArg, keyArg]
+  const command = ['npx create-utilhq-app', templateArg, languageArg, keyArg]
     .join(' ')
     .replace(/\s+/g, ' ')
 
@@ -254,11 +254,11 @@ function InstallToNew({
       <div className="space-y-6">
         <div>
           <h3 className="font-semibold text-gray-900 text-base mb-2">
-            1. Create a new Interval project
+            1. Create a new utilhq project
           </h3>
 
           <p className="mb-4">
-            Generate the scaffolding for a blank slate Interval app, or select a
+            Generate the scaffolding for a blank slate utilhq app, or select a
             template to start with{' '}
             <a
               href="/examples"
@@ -279,11 +279,11 @@ function InstallToNew({
                 }
                 className="text-primary-500 font-medium hover:opacity-60 cursor-pointer"
               >
-                add Interval to an existing codebase
+                add utilhq to an existing codebase
               </a>{' '}
               or{' '}
               <a
-                href="https://github.com/interval/interval-examples"
+                href="https://github.com/utilhq/utilhq-examples"
                 target="_blank"
                 className="text-primary-500 font-medium hover:opacity-60 cursor-pointer"
                 rel="noreferrer"
@@ -301,7 +301,7 @@ function InstallToNew({
                 }
                 className="text-primary-500 font-medium hover:opacity-60 cursor-pointer"
               >
-                add Interval to an existing codebase instead
+                add utilhq to an existing codebase instead
               </a>
               .
             </p>
@@ -377,15 +377,15 @@ export default function ConsoleOnboarding() {
         Connect from the SDK
       </h2>
       <p className="mb-4">
-        Tools in Interval are called{' '}
+        Tools in utilhq are called{' '}
         <a
-          href="https://interval.com/docs/concepts/actions"
+          href="https://utilhq.com/docs/concepts/actions"
           target="_blank"
           className="text-primary-500 font-medium hover:opacity-60"
         >
           actions
         </a>{' '}
-        and created using the Interval SDK. Follow the steps below to install
+        and created using the utilhq SDK. Follow the steps below to install
         the SDK in your existing project and start building actions.
       </p>
       <div className="flex items-start mb-4">

@@ -469,7 +469,7 @@ function MFASection() {
           <p>
             <a
               className="font-medium text-primary-500 hover:opacity-60"
-              href="https://interval.com/docs/writing-actions/authentication#multi-factor-authentication"
+              href="https://utilhq.com/docs/writing-actions/authentication#multi-factor-authentication"
             >
               Multi-factor authentication
             </a>{' '}

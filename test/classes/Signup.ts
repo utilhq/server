@@ -3,7 +3,7 @@ import { getConfirmUrl } from '~/server/auth'
 import prisma from '../../src/server/prisma'
 
 export function generateTestEmail() {
-  return `accounts+${new Date().getTime()}@interval.dev`
+  return `accounts+${new Date().getTime()}@utilhq.dev`
 }
 
 export class Signup {

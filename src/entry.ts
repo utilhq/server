@@ -20,8 +20,8 @@ import { promisify } from 'util'
 const exec = promisify(execCallback)
 
 // __dirname
-// Dev: /Users/alex/dev/interval/server/dist/src
-// Release: /Users/alex/.nvm/versions/node/v18.18.1/lib/node_modules/interval-server/dist/src
+// Dev: /Users/alex/dev/utilhq/server/dist/src
+// Release: /Users/alex/.nvm/versions/node/v18.18.1/lib/node_modules/utilhq-server/dist/src
 
 const projectRootDir = path.resolve(__dirname, '..', '..')
 
@@ -132,7 +132,7 @@ async function initDb(opts: { skipCreate?: boolean }) {
         `psql ${envVars.DATABASE_URL} -t -c "SELECT 1 FROM pg_database WHERE datname='${dbName}'"`
       )
       logger.error(
-        `The database "${dbName}" already exists. You can run \`interval-server db-init --skip-create\` to run the initialization script against the existing "${dbName}" database.`
+        `The database "${dbName}" already exists. You can run \`utilhq-server db-init --skip-create\` to run the initialization script against the existing "${dbName}" database.`
       )
       process.exit(1)
     } catch (e) {
@@ -162,10 +162,10 @@ const program = new Command()
 program.showHelpAfterError()
 
 program
-  .name('interval-server')
-  .description('Interval Server is the central server for Interval apps')
+  .name('utilhq-server')
+  .description('utilhq server is the central server for utilhq apps')
   .option('-v, --verbose', 'verbose output')
-  .addCommand(new Command('start').description('starts Interval Server'))
+  .addCommand(new Command('start').description('starts utilhq server'))
   .addCommand(
     new Command('db-init').addOption(
       new Option(
@@ -196,7 +196,7 @@ async function main() {
 
     server.listen(Number(envVars.PORT), () => {
       logger.info(
-        `📡 Interval Server listening at http://localhost:${envVars.PORT}`
+        `📡 utilhq Server listening at http://localhost:${envVars.PORT}`
       )
     })
   } else if (cmd === 'db-init') {

@@ -13,9 +13,9 @@ import { z } from 'zod'
 import {
   ClientSchema,
   BackwardCompatibleLoadingState,
-} from '@interval/sdk/dist/internalRpcSchema'
-import { T_IO_RESPONSE } from '@interval/sdk/dist/ioSchema'
-import { DuplexRPCHandlers } from '@interval/sdk/dist/classes/DuplexRPCClient'
+} from '@utilhq/sdk/dist/internalRpcSchema'
+import { T_IO_RESPONSE } from '@utilhq/sdk/dist/ioSchema'
+import { DuplexRPCHandlers } from '@utilhq/sdk/dist/classes/DuplexRPCClient'
 import superjson from '~/utils/superjson'
 import { inferQueryOutput, trpc } from '~/utils/trpc'
 import { ActionMode } from '~/utils/types'
@@ -391,8 +391,8 @@ export default function useTransaction({
       ? [
           {
             id: 'development-only-request-drop-connection',
-            name: 'Simulate Interval restart',
-            subtitle: 'Available during Interval development only',
+            name: 'Simulate utilhq restart',
+            subtitle: 'Available during utilhq development only',
             perform: () => {
               rpc
                 .send('__TEST_ONLY_REQUEST_DROP_CONNECTION', void 0)

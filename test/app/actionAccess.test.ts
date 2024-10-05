@@ -1,4 +1,4 @@
-import Interval, { io, Layout, Page as IntervalPage } from '@interval/sdk/dist'
+import UtilHQ, { io, Layout, Page as UtilHQPage } from '@utilhq/sdk/dist'
 import { expect } from '@playwright/test'
 import { encryptPassword } from '~/server/auth'
 import {
@@ -168,7 +168,7 @@ test.describe('Action access', () => {
  * - Create a separate organization for these tests
  * - Create a support user
  * - Create support + engineering groups
- * - Start a new Interval app with various permissions configurations
+ * - Start a new utilhq app with various permissions configurations
  */
 test.beforeAll(async () => {
   // Just in case cleanup failed from previous run
@@ -190,7 +190,7 @@ test.beforeAll(async () => {
       owner: {
         create: {
           id: OWNER_ID,
-          email: 'action-owner@interval.com',
+          email: 'action-owner@utilhq.com',
         },
       },
       private: { create: {} },
@@ -282,7 +282,7 @@ test.beforeAll(async () => {
     },
   })
 
-  const interval = new Interval({
+  const utilhq = new UtilHQ({
     apiKey: LIVE_API_KEY,
     logLevel: 'debug',
     endpoint: ENDPOINT_URL,
@@ -293,7 +293,7 @@ test.beforeAll(async () => {
         }
       },
 
-      [ORG_GROUP_SLUG]: new IntervalPage({
+      [ORG_GROUP_SLUG]: new UtilHQPage({
         name: ORG_GROUP_SLUG,
         handler: async () => {
           return new Layout({
@@ -311,7 +311,7 @@ test.beforeAll(async () => {
         },
       }),
 
-      [ENG_GROUP_SLUG]: new IntervalPage({
+      [ENG_GROUP_SLUG]: new UtilHQPage({
         name: ENG_GROUP_SLUG,
         access: {
           teams: ['engineers'],
@@ -327,7 +327,7 @@ test.beforeAll(async () => {
         },
       }),
 
-      [SUPPORT_GROUP_SLUG]: new IntervalPage({
+      [SUPPORT_GROUP_SLUG]: new UtilHQPage({
         name: SUPPORT_GROUP_SLUG,
         access: {
           teams: ['support'],
@@ -343,7 +343,7 @@ test.beforeAll(async () => {
         },
       }),
 
-      [MIXED_GROUP_SLUG]: new IntervalPage({
+      [MIXED_GROUP_SLUG]: new UtilHQPage({
         name: MIXED_GROUP_SLUG,
         access: {
           teams: ['engineers'],
@@ -399,7 +399,7 @@ test.beforeAll(async () => {
     },
   })
 
-  interval.listen()
+  utilhq.listen()
 })
 
 async function cleanup() {

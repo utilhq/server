@@ -394,7 +394,7 @@ function SlackIntegrationsForm() {
       {organization.connectedToSlack ? (
         <>
           <p className="mb-3">
-            Your Slack workspace is connected to Interval 👍
+            Your Slack workspace is connected to utilhq 👍
           </p>
           <p className="mb-3">
             <a
@@ -409,20 +409,20 @@ function SlackIntegrationsForm() {
           <p className="mb-3">
             <a
               className="font-medium text-primary-500 hover:opacity-60"
-              href="https://interval.com/docs/writing-actions/notifications"
+              href="https://utilhq.com/docs/writing-actions/notifications"
             >
               To send notifications to a Slack channel
             </a>
-            , you'll also have to add the Interval app to that channel.
+            , you'll also have to add the utilhq app to that channel.
           </p>
         </>
       ) : (
         <>
           <p className="mb-3">
-            Connect your Slack workspace to Interval to enable{' '}
+            Connect your Slack workspace to utilhq to enable{' '}
             <a
               className="font-medium text-primary-500 hover:opacity-60"
-              href="https://interval.com/docs/writing-actions/notifications"
+              href="https://utilhq.com/docs/writing-actions/notifications"
             >
               sending notifications to Slack channels or users
             </a>

@@ -249,7 +249,7 @@ export default function ModeSwitch() {
                 <p className="text-xs leading-normal mt-2.5 text-gray-500">
                   The Development environment is unique to your user account.{' '}
                   <a
-                    href="https://interval.com/docs/concepts/console"
+                    href="https://utilhq.com/docs/concepts/console"
                     className="font-medium text-primary-500 hover:opacity-70"
                   >
                     Learn more &rsaquo;

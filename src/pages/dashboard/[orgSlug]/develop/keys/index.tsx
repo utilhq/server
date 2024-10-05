@@ -105,7 +105,7 @@ export default function KeysPage() {
           className="mb-4"
         >
           API keys are used to authenticate your account within the SDK and link
-          your actions to your Interval dashboard.
+          your actions to your utilhq dashboard.
         </IVAlert>
         <h2 className="h3 mb-2">Personal development key</h2>
         <div className="max-w-4xl mb-4 text-sm">
@@ -130,7 +130,7 @@ export default function KeysPage() {
               <div className="max-w-4xl text-sm">
                 Create live keys when you're ready to{' '}
                 <Link
-                  to="https://interval.com/docs/"
+                  to="https://utilhq.com/docs/"
                   className="font-medium text-primary-500 hover:opacity-60"
                 >
                   deploy your actions

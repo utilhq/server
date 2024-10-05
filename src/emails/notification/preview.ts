@@ -1,7 +1,7 @@
 import sendTemplate from '.'
 
 export default sendTemplate(
-  'accounts@interval.com',
+  'accounts@utilhq.com',
   {
     message: 'A charge of $10 has been refunded.',
     title: 'Refund over threshold',
@@ -17,8 +17,8 @@ export default sendTemplate(
       },
       {
         error:
-          'The Interval app is not installed in this Slack channel: #interval-notifications',
-        to: '#interval-notifications',
+          'The utilhq app is not installed in this Slack channel: #utilhq-notifications',
+        to: '#utilhq-notifications',
         method: 'SLACK',
       },
     ],

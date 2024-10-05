@@ -6,9 +6,9 @@ import {
   mockAction,
   mockActionMetadata,
 } from '~/utils/mockData'
-import { ParsedActionReturnData } from '@interval/sdk/dist/ioSchema'
+import { ParsedActionReturnData } from '@utilhq/sdk/dist/ioSchema'
 import { TransactionResultStatus } from '@prisma/client'
-import * as pkg from '@interval/sdk/package.json'
+import * as pkg from '@utilhq/sdk/package.json'
 
 export default {
   title: 'TransactionUI/Presentation/CompletionState',
@@ -33,11 +33,11 @@ const transaction = {
   resultStatus: 'SUCCESS' as TransactionResultStatus,
   resultSchemaVersion: 1,
   resultData: {
-    name: 'Interval',
-    email: 'accounts@interval.com',
+    name: 'utilhq',
+    email: 'accounts@utilhq.com',
     favoriteNumber: 15,
     isSubscribed: true,
-    url: 'https://interval.com',
+    url: 'https://utilhq.com',
   },
   owner: { email: 'owner@example.com' },
   hostInstance: {

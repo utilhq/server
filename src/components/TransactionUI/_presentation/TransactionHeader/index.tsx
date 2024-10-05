@@ -77,7 +77,7 @@ export default function TransactionHeader(props: Props) {
   return (
     <div className="flex-none p-4 sm:px-6 sm:pt-6 pb-0">
       <Helmet>
-        <title>{props.title} | Interval</title>
+        <title>{props.title} | utilhq</title>
       </Helmet>
       <PageHeading
         title={props.title}

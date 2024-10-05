@@ -1,4 +1,4 @@
-import { ioSchema } from '@interval/sdk/dist/ioSchema'
+import { ioSchema } from '@utilhq/sdk/dist/ioSchema'
 import Confirm from '~/components/io-methods/Confirm'
 import DisplayCode from '~/components/io-methods/DisplayCode'
 import DisplayGrid from '~/components/io-methods/DisplayGrid'

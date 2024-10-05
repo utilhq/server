@@ -460,7 +460,7 @@ export const organizationRouter = createRouter()
       const didSend = await inviteNewUser(email, {
         organizationName: invitation.organization.name,
         signupUrl: `${env.APP_URL}/accept-invitation?token=${invitation.id}`,
-        preheader: `You've been invited to join ${invitation.organization.name} on Interval.`,
+        preheader: `You've been invited to join ${invitation.organization.name} on utilhq.`,
       })
 
       return { didSendInvitation: didSend?.response?.Message === 'OK' ?? false }
@@ -627,7 +627,7 @@ export const organizationRouter = createRouter()
       if (!process.env.SLACK_CLIENT_ID || !process.env.SLACK_CLIENT_SECRET) {
         throw new TRPCError({
           code: 'BAD_REQUEST',
-          message: `Please add Slack OAuth keys to your Interval instance before enabling this integration.`,
+          message: `Please add Slack OAuth keys to your utilhq instance before enabling this integration.`,
         })
       }
 

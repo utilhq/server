@@ -1,13 +1,13 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { ioSchema } from '@interval/sdk/dist/ioSchema'
+import { ioSchema } from '@utilhq/sdk/dist/ioSchema'
 import {
   DashboardContext,
   DashboardContextValue,
 } from '~/components/DashboardContext'
 import { RenderContextProvider } from '~/components/RenderContext'
 import { RenderIOCall } from '~/components/RenderIOCall'
-import useInterval from '~/utils/useInterval'
+import useUtilHQ from '~/utils/useUtilHQ'
 
 import { UnimplementedComponents } from '~/components/TransactionUI'
 
@@ -39,7 +39,7 @@ function DocsComponentPreview() {
   }, [multipleUrlProps])
 
   // Broadcast height to the iframe so we display the full component
-  useInterval(() => {
+  useUtilHQ(() => {
     const height = document.querySelector('html')?.offsetHeight ?? 0
     if (window.parent && height) {
       window.parent.postMessage({ height }, '*')
@@ -96,8 +96,8 @@ export default function DocsComponentPreviewPage() {
         {
           organization: {
             id: '0',
-            name: 'Interval',
-            slug: 'interval',
+            name: 'utilhq',
+            slug: 'utilhq',
             ownerId: '0',
             createdAt: new Date(),
             updatedAt: new Date(),

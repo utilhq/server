@@ -7,5 +7,5 @@ export type ConfirmEmailTemplateProps = {
 
 export default emailSender<ConfirmEmailTemplateProps>(
   'confirm-email',
-  () => `Please confirm your email address on Interval`
+  () => `Please confirm your email address on utilhq`
 )

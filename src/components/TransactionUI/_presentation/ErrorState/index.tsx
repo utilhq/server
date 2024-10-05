@@ -28,7 +28,7 @@ export const ERROR_STATE_MESSAGES: Partial<
       window. This client has been disconnected.
     </p>
   ),
-  SERVER_DROPPED: <p>The connection to Interval was lost.</p>,
+  SERVER_DROPPED: <p>The connection to utilhq was lost.</p>,
   INVALID_MESSAGE: (
     <>
       <p>

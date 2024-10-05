@@ -35,8 +35,8 @@ Default.args = {
 }
 
 const mockRow = {
-  email: 'accounts@interval.com',
-  fullName: 'Interval',
+  email: 'accounts@utilhq.com',
+  fullName: 'utilhq',
   number: 15,
   isVerified: true,
 }

@@ -18,7 +18,7 @@ export async function generateS3Urls(key: string) {
   const command = new PutObjectCommand({
     // always use this bucket for test uploads.
     // it has public access configured so upload contents can be validated.
-    Bucket: 'interval-io-uploads-dev',
+    Bucket: 'utilhq-io-uploads-dev',
     Key: key,
   })
 

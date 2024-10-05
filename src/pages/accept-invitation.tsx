@@ -12,7 +12,7 @@ function Container(props) {
   return (
     <div className="flex items-center justify-center min-h-screen-ios">
       <Helmet>
-        <title>Join organization | Interval</title>
+        <title>Join organization | utilhq</title>
       </Helmet>
       {props.children}
     </div>
@@ -149,7 +149,7 @@ function AcceptInvitationPage() {
             <div className="my-8 space-y-4">
               <p>
                 <strong>{signupCheck.data.invitation.organization.name}</strong>{' '}
-                has invited you to join their organization on Interval.
+                has invited you to join their organization on utilhq.
               </p>
               <IVAPIError error={joinOrg.error} />
             </div>

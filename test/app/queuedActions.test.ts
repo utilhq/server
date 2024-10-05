@@ -1,4 +1,4 @@
-import Interval from '@interval/sdk/dist'
+import UtilHQ from '@utilhq/sdk/dist'
 import { prisma, config, dashboardUrl, sleep } from '../_setup'
 import { test } from '../_fixtures'
 import { dateTimeFormatter } from '../../src/utils/formatters'
@@ -7,10 +7,10 @@ test.skip(!!process.env.SDK_VERSION && process.env.SDK_VERSION !== 'main')
 test.skip(!!process.env.GHOST_MODE)
 
 test.describe('queuedActions', () => {
-  let interval: Interval | undefined
+  let utilhq: UtilHQ | undefined
 
   test.beforeAll(async () => {
-    interval = new Interval({
+    utilhq = new UtilHQ({
       apiKey: config.liveApiKey,
       logLevel: 'debug',
       endpoint: `${config.url.replace('http', 'ws')}/websocket`,
@@ -21,7 +21,7 @@ test.describe('queuedActions', () => {
       },
     })
 
-    interval.listen()
+    utilhq.listen()
 
     console.log('listening')
 
@@ -96,11 +96,11 @@ test.describe('queuedActions', () => {
       undefined: undefined,
     }
 
-    while (!interval?.isConnected) {
+    while (!utilhq?.isConnected) {
       await sleep(500)
     }
 
-    await interval?.enqueue('echoParams', {
+    await utilhq?.enqueue('echoParams', {
       params,
     })
 

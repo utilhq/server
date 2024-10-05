@@ -1,4 +1,4 @@
-import { T_IO_RETURNS } from '@interval/sdk/dist/ioSchema'
+import { T_IO_RETURNS } from '@utilhq/sdk/dist/ioSchema'
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import FileUploadButton, { UploadStep } from '~/components/FileUploadButton'
 import IVInputField from '~/components/IVInputField'
@@ -51,7 +51,7 @@ export default function UploadFile(
   }, [props.uploadUrl, props.downloadUrl, props.fileUrls])
 
   // these will be undefined if the user didn't define a custom generator function, null if they did
-  const isUsingIntervalUrls = userFileUrls === undefined
+  const isUsingUtilHQUrls = userFileUrls === undefined
 
   const normalizedExtensions = useMemo(
     () =>
@@ -67,7 +67,7 @@ export default function UploadFile(
   useEffect(() => {
     if (files.length === 0) return
 
-    if (isUsingIntervalUrls) return
+    if (isUsingUtilHQUrls) return
 
     onStateChange({
       files: files.map(f => ({
@@ -79,7 +79,7 @@ export default function UploadFile(
       name: !props.isMultiple ? files[0].name : undefined,
       type: !props.isMultiple ? files[0].type : undefined,
     })
-  }, [isUsingIntervalUrls, files, onStateChange, props.isMultiple])
+  }, [isUsingUtilHQUrls, files, onStateChange, props.isMultiple])
 
   useEffect(() => {
     setServerError(null)
@@ -88,7 +88,7 @@ export default function UploadFile(
 
     if (!getUploadUrls) return
 
-    if (isUsingIntervalUrls) {
+    if (isUsingUtilHQUrls) {
       getUploadUrls({
         transactionId: props.transaction?.id as string,
         inputGroupKey: props.inputGroupKey,
@@ -108,7 +108,7 @@ export default function UploadFile(
   }, [
     files,
     getUploadUrls,
-    isUsingIntervalUrls,
+    isUsingUtilHQUrls,
     props.id,
     props.inputGroupKey,
     props.transaction?.id,
@@ -162,10 +162,10 @@ export default function UploadFile(
 
   // initiate the upload when a file is selected and the uploadUrl is available
   useEffect(() => {
-    if (isUsingIntervalUrls) {
+    if (isUsingUtilHQUrls) {
       upload()
     }
-  }, [urls, files, isUsingIntervalUrls, upload])
+  }, [urls, files, isUsingUtilHQUrls, upload])
 
   useEffect(() => {
     if (

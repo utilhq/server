@@ -44,43 +44,43 @@ Search.args = {
   results: [
     {
       value: '1',
-      label: 'Alex Arena',
+      label: 'Ye 001',
     },
     {
       value: '2',
-      label: 'Dan Philibin',
+      label: 'Ye 002',
     },
     {
       value: '3',
-      label: 'Jacob Mischka',
+      label: 'Ye 003',
     },
     {
       value: '4',
-      label: 'Ryan Coppolo',
+      label: 'Ye 004',
     },
     {
       value: '5',
-      label: 'Kyle Sanok',
+      label: 'Ye 005',
     },
     {
       value: '6',
-      label: 'Alex Arena (2)',
+      label: 'Ye 006',
     },
     {
       value: '7',
-      label: 'Dan Philibin (2)',
+      label: 'Ye 007',
     },
     {
       value: '8',
-      label: 'Jacob Mischka (2)',
+      label: 'Ye 008',
     },
     {
       value: '9',
-      label: 'Ryan Coppolo (2)',
+      label: 'Ye 009',
     },
     {
       value: '10',
-      label: 'Kyle Sanok (2)',
+      label: 'Ye 010',
     },
   ],
   onUpdatePendingReturnValue: () => {
@@ -94,40 +94,40 @@ Search.args = {
 const users: Result[] = [
   {
     value: '1',
-    label: 'Alex Arena',
-    description: 'alex@interval.com',
+    label: 'Ye 001',
+    description: 'ye+001@utilhq.com',
     image: {
       url: 'https://picsum.photos/100',
     },
   },
   {
     value: '2',
-    label: 'Dan Philibin',
-    description: 'dan@interval.com',
+    label: 'Ye 002',
+    description: 'ye+002@utilhq.com',
     image: {
       url: 'https://picsum.photos/100',
     },
   },
   {
     value: '3',
-    label: 'Jacob Mischka',
-    description: 'jacob@interval.com',
+    label: 'Ye 003',
+    description: 'ye+003@utilhq.com',
     image: {
       url: 'https://picsum.photos/100',
     },
   },
   {
     value: '4',
-    label: 'Ryan Coppolo',
-    description: 'ryan@interval.com',
+    label: 'Ye 004',
+    description: 'ye+004@utilhq.com',
     image: {
       url: 'https://picsum.photos/100',
     },
   },
   {
     value: '5',
-    label: 'Kyle Sanok',
-    description: 'kyle@interval.com',
+    label: 'Ye 005',
+    description: 'ye+005@utilhq.com',
     image: {
       url: 'https://picsum.photos/100',
     },

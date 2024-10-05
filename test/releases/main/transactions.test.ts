@@ -20,7 +20,7 @@ test.describe.parallel('Basic transactions tests', () => {
     await transactions.run('context')
     await page.goto(page.url() + '?message=Hello')
     await transactions.expectSuccess({
-      user: 'Test Runner (test-runner@interval.com)',
+      user: 'Test Runner (test-runner@utilhq.com)',
       message: 'Hello',
       environment: 'development',
       role: 'admin',
@@ -42,7 +42,7 @@ test.describe.parallel('Basic transactions tests', () => {
     await expect(page.locator('text=Sub-heading')).toBeVisible()
     await expect(
       page.locator('a:has-text("External link item")')
-    ).toHaveAttribute('href', 'https://interval.com')
+    ).toHaveAttribute('href', 'https://utilhq.com')
     await expect(
       page.locator('a:has-text("Action link item")')
     ).toHaveAttribute(
@@ -96,7 +96,7 @@ test.describe.parallel('Basic transactions tests', () => {
     await expect(page.locator('dt:has-text("isTrue")')).toBeVisible()
     await expect(page.locator('dd:has-text("true")')).toBeVisible()
     await expect(page.locator('dt:has-text("name")')).toBeVisible()
-    await expect(page.locator('dd:has-text("Interval")')).toBeVisible()
+    await expect(page.locator('dd:has-text("utilhq")')).toBeVisible()
     await expect(page.locator('summary:has-text("longList")')).toBeVisible()
     await expect(page.locator('dd:has-text("Item 99")')).toBeHidden()
     await page.locator('summary:has-text("longList")').click()
@@ -130,7 +130,7 @@ test.describe.parallel('Basic transactions tests', () => {
     )
     await expect(
       page.locator('a:has-text("Link to external")')
-    ).toHaveAttribute('href', 'https://interval.com')
+    ).toHaveAttribute('href', 'https://utilhq.com')
   })
 
   test('io.display.metadata', async ({ page, transactions }) => {
@@ -274,7 +274,7 @@ test.describe.parallel('Basic transactions tests', () => {
 
     await expect(page.locator('text=External item 0')).toHaveAttribute(
       'href',
-      'https://interval.com'
+      'https://utilhq.com'
     )
 
     await page.locator('text=Action item 0').click()
@@ -333,7 +333,7 @@ test.describe.parallel('Basic transactions tests', () => {
         <button onclick="window.alert">Form submit button</button>
       </form>
 
-      <iframe src="https://interval.com"></iframe>
+      <iframe src="https://utilhq.com"></iframe>
 
       <p class="text-xl" style="color: red;">Hello, in red!</p>
       <p class="text-lg">
@@ -349,7 +349,7 @@ test.describe.parallel('Basic transactions tests', () => {
     await expect(page.locator('text="No script."')).toBeHidden()
     await expect(page.locator('text="Form submit button"')).toBeHidden()
     await expect(
-      page.locator('iframe[src="https://interval.com"]')
+      page.locator('iframe[src="https://utilhq.com"]')
     ).toBeHidden()
     const p = page.locator('p:has-text("Hello, in red!")')
     expect(await p.getAttribute('style')).toBeFalsy()
@@ -376,14 +376,14 @@ test.describe.parallel('Basic transactions tests', () => {
       'Please enter a value with between 5 and 20 characters.'
     await transactions.expectValidationError(validationErrorMessage)
 
-    await input.fill('Interval Interval Interval Interval')
+    await input.fill('utilhq utilhq utilhq utilhq')
     await transactions.continue()
     await transactions.expectValidationError(validationErrorMessage)
 
-    await input.fill('Interval')
+    await input.fill('utilhq')
     await transactions.continue()
     await transactions.expectSuccess({
-      name: 'Interval',
+      name: 'utilhq',
     })
   })
 
@@ -399,10 +399,10 @@ test.describe.parallel('Basic transactions tests', () => {
     // the browser's built-in type="email" validator will prevent continuing
 
     await page.click('text=Email address')
-    await page.keyboard.type('hello@interval.com')
+    await page.keyboard.type('hello@utilhq.com')
     await transactions.continue()
     await transactions.expectSuccess({
-      email: 'hello@interval.com',
+      email: 'hello@utilhq.com',
     })
   })
 
@@ -653,21 +653,21 @@ test.describe.parallel('Basic transactions tests', () => {
     const validationErrorMessage = 'Please enter a valid URL.'
     await transactions.expectValidationError(validationErrorMessage)
 
-    await input.fill('https://interval.com/?isTest=true&foo=bar')
+    await input.fill('https://utilhq.com/?isTest=true&foo=bar')
     await transactions.continue()
 
     await expect(page.locator('text=secure URL')).toBeVisible()
 
     const secureInput = page.locator('input[type="text"]').last()
-    await secureInput.fill('http://interval.com')
+    await secureInput.fill('http://utilhq.com')
     await transactions.continue()
     await transactions.expectValidationError('The URL must begin with https.')
 
-    await secureInput.fill('https://interval.com')
+    await secureInput.fill('https://utilhq.com')
     await transactions.continue()
     await transactions.expectSuccess({
-      url: 'https://interval.com/?isTest=true&foo=bar',
-      secureUrl: 'https://interval.com',
+      url: 'https://utilhq.com/?isTest=true&foo=bar',
+      secureUrl: 'https://utilhq.com',
     })
   })
 
@@ -1077,7 +1077,7 @@ test.describe.parallel('Basic transactions tests', () => {
     await page.goto(await consoleUrl())
     await transactions.run('error')
     await page.click('text=First name')
-    await page.fill('input[type="text"]', 'Interval')
+    await page.fill('input[type="text"]', 'utilhq')
     await transactions.continue()
     await transactions.expectFailure({
       message: 'Unauthorized',
@@ -1232,7 +1232,7 @@ test.describe.parallel('Basic transactions tests', () => {
     await expect(controlPanel.locator('text=Explicit: Message')).toBeVisible()
     await expect(
       controlPanel.locator(
-        'text=Would have sent to alex@interval.com via EMAIL'
+        'text=Would have sent to alex@utilhq.com via EMAIL'
       )
     ).toBeVisible()
 
@@ -1240,7 +1240,7 @@ test.describe.parallel('Basic transactions tests', () => {
 
     await expect(controlPanel.locator('text=Implicit')).toBeVisible()
     await expect(
-      controlPanel.locator('text=Would have sent to test-runner@interval.com')
+      controlPanel.locator('text=Would have sent to test-runner@utilhq.com')
     ).toBeVisible()
   })
 
@@ -1283,7 +1283,7 @@ test.describe.parallel('Basic transactions tests', () => {
     await page.goto(await consoleUrl())
     await transactions.run('links')
 
-    const linkTo = 'https://interval.com'
+    const linkTo = 'https://utilhq.com'
 
     await page.fill('text=Enter a URL', linkTo)
     await transactions.continue()
@@ -1336,9 +1336,9 @@ test.describe.parallel('Basic transactions tests', () => {
       await page.fill('text=Age', '20')
       await transactions.continue()
       await transactions.expectValidationError(
-        'Only Interval employees are invited to the holiday party.'
+        'Only utilhq employees are invited to the holiday party.'
       )
-      await page.fill('text=Email', 'john@interval.com')
+      await page.fill('text=Email', 'john@utilhq.com')
       await page.click('text=Include drink tickets?')
       await transactions.continue()
       await transactions.expectGroupValidationError(
@@ -1359,9 +1359,9 @@ test.describe.parallel('Basic transactions tests', () => {
       await page.fill('text=Age', '20')
       await transactions.continue()
       await transactions.expectValidationError(
-        'Only Interval employees are invited to the holiday party.'
+        'Only utilhq employees are invited to the holiday party.'
       )
-      await page.fill('text=Email', 'john@interval.com')
+      await page.fill('text=Email', 'john@utilhq.com')
       await page.click('text=Include drink tickets?')
       await transactions.continue()
       await transactions.expectGroupValidationError(
@@ -1482,7 +1482,7 @@ test.describe.parallel('Basic transactions tests', () => {
       await transactions.navigate('redirect')
       await transactions.run('redirect/redirect_url')
 
-      const url = 'https://interval.com'
+      const url = 'https://utilhq.com'
 
       await page.fill('text=Enter a URL', url)
       await transactions.continue()

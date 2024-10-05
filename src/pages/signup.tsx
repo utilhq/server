@@ -71,7 +71,7 @@ export default function SignupPage() {
       return (
         <div className="flex items-center justify-center min-h-screen-ios">
           <Helmet>
-            <title>Sign up | Interval</title>
+            <title>Sign up | utilhq</title>
           </Helmet>
           <div className="py-12">
             <IVSpinner />
@@ -93,7 +93,7 @@ export default function SignupPage() {
   return (
     <div className="flex items-center justify-center min-h-screen-ios">
       <Helmet>
-        <title>Sign up | Interval</title>
+        <title>Sign up | utilhq</title>
       </Helmet>
       <div className="w-full max-w-lg p-8 mx-auto">
         {accountDisabled ? (
@@ -106,10 +106,10 @@ export default function SignupPage() {
               <p className="mt-2">
                 Please reach out to
                 <a
-                  href="mailto:help@interval.com"
+                  href="mailto:help@utilhq.com"
                   className="font-medium hover:opacity-70"
                 >
-                  help@interval.com
+                  help@utilhq.com
                 </a>
                 with any questions or if you think this is a mistake.
               </p>
@@ -229,7 +229,7 @@ export default function SignupPage() {
                           <strong>
                             {signupCheck.data?.invitation.organization.name}
                           </strong>{' '}
-                          is inviting you to join Interval.
+                          is inviting you to join utilhq.
                         </div>
                       )}
 
@@ -403,7 +403,7 @@ export default function SignupPage() {
                           to="/login"
                           className="text-sm font-medium text-primary-500 hover:opacity-70"
                         >
-                          Already have an Interval account?
+                          Already have an utilhq account?
                         </Link>
                       </div>
                     )}

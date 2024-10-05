@@ -25,7 +25,7 @@ test('re-connects on server restart', async ({
   await request.get(`/api/system/reboot`)
 
   await expect(
-    page.locator('text=The connection to Interval was lost.')
+    page.locator('text=The connection to utilhq was lost.')
   ).toBeVisible()
 
   await expect(page.locator('text=First name')).toBeVisible({ timeout: 20_000 })
@@ -40,7 +40,7 @@ test('re-connects on server restart', async ({
   await transactions.expectSuccess()
 })
 
-test('Client reconnects on Interval restart', async ({
+test('Client reconnects on utilhq restart', async ({
   transactions,
   page,
 }) => {
@@ -62,7 +62,7 @@ test('Client reconnects on Interval restart', async ({
 
   await page.click('[data-pw-command-bar-toggle]')
   await page.click(
-    '[data-pw-command-bar-results] [role="option"]:has-text("Simulate Interval restart")'
+    '[data-pw-command-bar-results] [role="option"]:has-text("Simulate utilhq restart")'
   )
 
   await transactions.continue()

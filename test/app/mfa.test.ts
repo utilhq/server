@@ -11,7 +11,7 @@ test.skip(!!process.env.GHOST_MODE)
 const userConfig = {
   firstName: 'MFA',
   lastName: 'Tester',
-  email: 'test-mfa@interval.com',
+  email: 'test-mfa@utilhq.com',
   password: 'password',
 }
 

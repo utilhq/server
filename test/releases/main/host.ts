@@ -1,9 +1,9 @@
 import http from 'http'
 import path from 'path'
 import fs from 'fs'
-import Interval, { ctx, io, Action, Page, Layout } from '@interval/sdk/dist'
-import ExperimentalInterval from '@interval/sdk/dist/experimental'
-import IntervalClient from '@interval/sdk/dist/classes/IntervalClient'
+import UtilHQ, { ctx, io, Action, Page, Layout } from '@utilhq/sdk/dist'
+import ExperimentalUtilHQ from '@utilhq/sdk/dist/experimental'
+import UtilHQClient from '@utilhq/sdk/dist/classes/UtilHQClient'
 import { config, ENDPOINT_URL, sleep } from '../../_setup'
 import { generateS3Urls } from '../../utils/uploads'
 import {
@@ -16,7 +16,7 @@ import {
 import z from 'zod'
 import util from 'util'
 import * as db from '../../data/mockDb'
-import { EventualMetaItem } from '@interval/sdk/dist/components/displayMetadata'
+import { EventualMetaItem } from '@utilhq/sdk/dist/components/displayMetadata'
 
 const writeFile = util.promisify(fs.writeFile)
 const removeFile = util.promisify(fs.unlink)
@@ -24,9 +24,9 @@ const readFile = util.promisify(fs.readFile)
 
 /*
   Assuming the SDK is installed at: <PROJECT_DIRECTORY>/node_modules
-  The config file will be at: <PROJECT_DIRECTORY>/node_modules/@interval/sdk/dist/.interval.config.json
+  The config file will be at: <PROJECT_DIRECTORY>/node_modules/@utilhq/sdk/dist/.utilhq.config.json
 */
-const intervalConfigPath = path.join(__dirname, '.interval.config.json')
+const utilhqConfigPath = path.join(__dirname, '.utilhq.config.json')
 
 const SCHEMA = z.object({
   ghostOrgId: z.string(),
@@ -35,7 +35,7 @@ const SCHEMA = z.object({
 export const localConfig = {
   async get() {
     try {
-      const contents = await readFile(intervalConfigPath, 'utf-8')
+      const contents = await readFile(utilhqConfigPath, 'utf-8')
       const configFile = SCHEMA.parse(JSON.parse(contents))
       return configFile
     } catch (e) {
@@ -43,21 +43,21 @@ export const localConfig = {
     }
   },
   async write(config: z.infer<typeof SCHEMA>) {
-    return writeFile(intervalConfigPath, JSON.stringify(config), 'utf-8')
+    return writeFile(utilhqConfigPath, JSON.stringify(config), 'utf-8')
   },
   async clear() {
     try {
-      await removeFile(intervalConfigPath)
+      await removeFile(utilhqConfigPath)
     } catch (e) {
       return null
     }
   },
 }
 
-export { Interval }
+export { UtilHQ as UtilHQ }
 
 export default async function setupHost() {
-  const interval = new Interval({
+  const utilhq = new UtilHQ({
     apiKey: config.apiKey,
     logLevel: 'debug',
     endpoint: ENDPOINT_URL,
@@ -71,7 +71,7 @@ export default async function setupHost() {
           menuItems: [
             {
               label: 'External link item',
-              url: 'https://interval.com',
+              url: 'https://utilhq.com',
             },
             {
               label: 'Action link item',
@@ -139,7 +139,7 @@ export default async function setupHost() {
               number: 15,
               nullValue: null,
               nested: {
-                name: 'Interval',
+                name: 'utilhq',
               },
               longList: Array(100)
                 .fill(0)
@@ -166,7 +166,7 @@ export default async function setupHost() {
             },
             {
               label: `External item ${row.index}`,
-              url: 'https://interval.com',
+              url: 'https://utilhq.com',
             },
           ],
         })
@@ -192,7 +192,7 @@ export default async function setupHost() {
               },
               {
                 label: `External item ${row.index}`,
-                url: 'https://interval.com',
+                url: 'https://utilhq.com',
               },
             ],
           }),
@@ -295,7 +295,7 @@ export default async function setupHost() {
             params: { message: 'Hello from link!' },
           }),
           io.display.link('Link to external', {
-            url: 'https://interval.com',
+            url: 'https://utilhq.com',
           }),
         ])
       },
@@ -851,14 +851,14 @@ export default async function setupHost() {
         await ctx.notify({
           title: 'Explicit',
           message: 'Message',
-          delivery: [{ to: 'alex@interval.com', method: 'EMAIL' }],
+          delivery: [{ to: 'alex@utilhq.com', method: 'EMAIL' }],
         })
 
         await io.confirm('Send another?')
 
         await ctx.notify({
           message: 'Implicit',
-          delivery: [{ to: 'test-runner@interval.com' }],
+          delivery: [{ to: 'test-runner@utilhq.com' }],
         })
       },
       links: async io => {
@@ -975,7 +975,7 @@ export default async function setupHost() {
         })
       },
       badMessage: async () => {
-        const client = new IntervalClient(interval, interval.config)
+        const client = new UtilHQClient(utilhq, utilhq.config)
 
         // @ts-expect-error: Intentionally using private method
         await client.initializeConnection()
@@ -1420,7 +1420,7 @@ export default async function setupHost() {
     },
   })
 
-  interval.routes.add(
+  utilhq.routes.add(
     'validation',
     new Page({
       name: 'Validation',
@@ -1430,8 +1430,8 @@ export default async function setupHost() {
             .group([
               io.input.text('Name'),
               io.input.email('Email').validate(email => {
-                if (!email.endsWith('@interval.com'))
-                  return 'Only Interval employees are invited to the holiday party.'
+                if (!email.endsWith('@utilhq.com'))
+                  return 'Only utilhq employees are invited to the holiday party.'
               }),
               io.input.number('Age').optional(),
               io.input.boolean('Include drink tickets?'),
@@ -1456,8 +1456,8 @@ export default async function setupHost() {
             .group({
               name: io.input.text('Name'),
               email: io.input.email('Email').validate(email => {
-                if (!email.endsWith('@interval.com'))
-                  return 'Only Interval employees are invited to the holiday party.'
+                if (!email.endsWith('@utilhq.com'))
+                  return 'Only utilhq employees are invited to the holiday party.'
               }),
               age: io.input.number('Age').optional(),
               includeDrinkTickets: io.input.boolean('Include drink tickets?'),
@@ -1557,25 +1557,25 @@ export default async function setupHost() {
     },
   })
 
-  interval.routes.add('before_listen', async () => {
+  utilhq.routes.add('before_listen', async () => {
     return 'Hello, from the past'
   })
 
-  interval
+  utilhq
     .listen()
     .then(() => {
-      interval.routes.add('dynamic_group', dynamicGroup)
-      interval.routes.add('after_listen', async () => {
+      utilhq.routes.add('dynamic_group', dynamicGroup)
+      utilhq.routes.add('after_listen', async () => {
         return 'Hello, from the future'
       })
     })
     .catch(err => {
-      console.error('Failed starting interval listener', err)
+      console.error('Failed starting utilhq listener', err)
     })
 
   if (!process.env.GHOST_MODE) {
     // Stateless/"serverless" HTTP listener
-    const stateless = new ExperimentalInterval({
+    const stateless = new ExperimentalUtilHQ({
       apiKey: config.liveApiKey,
       logLevel: 'debug',
       endpoint: ENDPOINT_URL,

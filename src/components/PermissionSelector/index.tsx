@@ -37,12 +37,12 @@ export default function PermissionSelector({
           <>
             <a
               className="text-primary-500 font-medium hover:opacity-60"
-              href="https://interval.com/docs/writing-actions/authentication#roles"
+              href="https://utilhq.com/docs/writing-actions/authentication#roles"
               target="_blank"
             >
               Learn more
             </a>{' '}
-            about the different access levels of Interval roles
+            about the different access levels of utilhq roles
           </>
         }
         helpText={
