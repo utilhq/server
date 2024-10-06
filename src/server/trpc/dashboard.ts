@@ -18,6 +18,15 @@ import env from '~/env'
 import { isWorkOSEnabled } from '~/server/auth'
 
 export const dashboardRouter = createRouter()
+  .query('integrations', {
+    async resolve() {
+      // TODO: postmark, etc
+      return {
+        slack: !!env.SLACK_CLIENT_ID && !!env.SLACK_CLIENT_SECRET,
+        workos: isWorkOSEnabled,
+      }
+    },
+  })
   .middleware(authenticatedMiddleware)
   .query('global-feature-flags', {
     async resolve({ ctx }) {
@@ -26,15 +35,6 @@ export const dashboardRouter = createRouter()
           enabled: true,
         },
       })
-    },
-  })
-  .query('integrations', {
-    async resolve() {
-      // TODO: postmark, etc
-      return {
-        slack: !!env.SLACK_CLIENT_ID && !!env.SLACK_CLIENT_SECRET,
-        workos: isWorkOSEnabled,
-      }
     },
   })
   .middleware(organizationMiddleware)
