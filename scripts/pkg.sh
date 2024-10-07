@@ -13,6 +13,7 @@ cp prisma/clean-vite-cache-generator.js release/prisma/clean-vite-cache-generato
 
 cp -r email-templates release/email-templates
 cp -r LICENSE release/license
+cp -r NOTICE release/notice
 cp README.md release/README.md
 
 # tar -czf release.tar.gz release
