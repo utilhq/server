@@ -1,7 +1,7 @@
 {
   "name": "@utilhq/server",
   "description": "utilhq Server is the central server for utilhq apps",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "engines": {
     "node": ">=16"
@@ -58,7 +58,7 @@
     "devalue": "^2.0.1",
     "dotenv": "^16.3.1",
     "ee-ts": "^1.0.2",
-    "email-templates": "^8.0.8",
+    "email-templates": "^12.0.1",
     "evt": "^2.4.10",
     "express": "^4.18.2",
     "generate-password": "^1.7.0",
@@ -69,7 +69,7 @@
     "luxon": "^3.0.4",
     "node-cron": "^3.0.1",
     "postmark": "^3.0.14",
-    "preview-email": "^3.0.6",
+    "preview-email": "^3.1.0",
     "prisma": "^5.3.0",
     "request-ip": "^3.3.0",
     "sanitize-html": "^2.11.0",
